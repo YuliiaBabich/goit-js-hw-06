@@ -12,3 +12,18 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const ul = document.querySelector('ul');
+//ul.style.listStyleType = "none";
+
+function renderList() {
+  const markup  =  images.map(({url, alt }) => {
+    return `<li class="list" style="list-syle-type:none;" ><img src='${url}' alt='${alt}' width = "400" style="border-radius: 20%; border: inset 10px #DCDCDC  ; " /></li>`;
+  
+  }) // зробили массив
+    .join() // зробили рядок
+  ul.insertAdjacentHTML('afterend', markup) // мeтод додавання рядків  розмітку  
+  
+  console.log(markup);
+}
+ renderList()
